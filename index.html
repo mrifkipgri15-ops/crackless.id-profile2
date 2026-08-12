@@ -1,1 +1,985 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>crklss.id | Company Profile</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #ffed86;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            width: 100%;
+            background: #111;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            font-weight: normal;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav ul li a:hover {
+            color: #bbb;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 620px;
+            background:
+                linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.58)),
+                url(https://plus.unsplash.com/premium_photo-1731950913352-0cce4eb3a74d?q=80&w=1475&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 80px 8%;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            max-width: 570px;
+            margin-bottom: 30px;
+            color: #eee;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            background: white;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .btn.dark {
+            background: #111;
+            color: white;
+            border: 1px solid white;
+        }
+
+        /* GENERAL */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+            font-size: 15px;
+        }
+
+        /* ABOUT */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .about-text h2 {
+            font-size: 34px;
+            margin-bottom: 18px;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        /* STATISTICS */
+        .stats {
+            background: #f5f5f5;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            padding: 45px 8%;
+        }
+
+        .stat h3 {
+            font-size: 34px;
+        }
+
+        .stat p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* PRODUCTS */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product {
+            border: 1px solid #e5e5e5;
+            background: white;
+            transition: .3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,.08);
+        }
+
+        .product img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            margin-bottom: 8px;
+        }
+
+        .product-info p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* BUSINESS */
+        .business {
+            background: #111;
+            color: white;
+        }
+
+        .business .section-title p {
+            color: #aaa;
+        }
+
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .business-card {
+            border: 1px solid #333;
+            padding: 30px 22px;
+        }
+
+        .business-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .business-card p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* WHY US */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .why-card {
+            padding: 30px;
+            background: #f7f7f7;
+            border-left: 4px solid #111;
+        }
+
+        .why-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* PORTFOLIO */
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portfolio-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,.75);
+            color: white;
+            padding: 18px;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #f5f5f5;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 12px;
+            color: #666;
+        }
+
+        form {
+            background: white;
+            padding: 30px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            outline: none;
+        }
+
+        textarea {
+            height: 130px;
+            resize: none;
+        }
+
+        button {
+            border: none;
+            padding: 13px 25px;
+            background: #111;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #333;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            color: white;
+            padding: 45px 8% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        footer a {
+            display: block;
+            text-decoration: none;
+            margin-bottom: 8px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+
+            nav {
+                padding: 16px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 70px 5%;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .about,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .products,
+            .portfolio {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .business-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 550px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .stats,
+            .products,
+            .business-grid,
+            .why-grid,
+            .portfolio {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">
+            CRKLSS.ID <span>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#business">Business</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <h1>Quality Footwear for Every Movement.</h1>
+
+            <p>
+                crklss.id merupakan toko kecil masih dalam tahap pengembangan yang berjalan bertahap
+                dan bergerak dalam perdagangan sepatu tentunya sepatu Adidas yg memiliki casual 
+                olahraga dan lifestyle.
+            </p>
+
+            <a href="#products" class="btn">Lihat Produk</a>
+            <a href="#contact" class="btn dark">Hubungi Kami</a>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="about">
+
+            <img
+                src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=1000&q=80"
+                alt="Sepatu">
+
+            <div class="about-text">
+
+                <h2>Tentang Perusahaan</h2>
+
+                <p>
+                    crklss.id adalah perusahaan perdagangan
+                    yang fokus pada produk footwear olahraga dan lifestyle.
+                </p>
+
+                <p>
+                    Kami menyediakan berbagai produk sepatu untuk memenuhi
+                    kebutuhan konsumen maupun mitra bisnis dengan
+                    mengutamakan kualitas, pelayanan dan ketepatan distribusi.
+                </p>
+
+                <p>
+                    Dengan jaringan bisnis yang terus berkembang, kami
+                    berkomitmen membangun hubungan jangka panjang dengan
+                    pelanggan dan partner.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATISTICS -->
+    <div class="stats">
+
+        <div class="stat">
+            <h3>10+</h3>
+            <p>Tahun Pengalaman</p>
+        </div>
+
+        <div class="stat">
+            <h3>50+</h3>
+            <p>Business Partner</p>
+        </div>
+
+        <div class="stat">
+            <h3>100K+</h3>
+            <p>Produk Terdistribusi</p>
+        </div>
+
+        <div class="stat">
+            <h3>20+</h3>
+            <p>Kota Distribusi</p>
+        </div>
+
+    </div>
+
+
+    <!-- PRODUCTS -->
+    <section id="products">
+
+        <div class="section-title">
+
+            <h2>Produk Kami</h2>
+
+            <p>
+                Berbagai kategori sepatu olahraga dan lifestyle
+                yang kami distribusikan.
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
+                    alt="Running">
+
+                <div class="product-info">
+
+                    <h3>Running Shoes</h3>
+
+                    <p>
+                        Sepatu untuk kebutuhan olahraga lari
+                        dengan desain nyaman dan ringan.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80"
+                    alt="Lifestyle">
+
+                <div class="product-info">
+
+                    <h3>Lifestyle</h3>
+
+                    <p>
+                        Koleksi footwear untuk aktivitas sehari-hari
+                        dengan desain modern.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <img
+                    src="https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=800&q=80"
+                    alt="Sports">
+
+                <div class="product-info">
+
+                    <h3>Sports</h3>
+
+                    <p>
+                        Produk sepatu untuk berbagai aktivitas
+                        olahraga dan training.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BUSINESS -->
+    <section class="business" id="business">
+
+        <div class="section-title">
+
+            <h2>Business Area</h2>
+
+            <p>
+                Kami menyediakan solusi perdagangan dan distribusi
+                untuk berbagai kebutuhan bisnis.
+            </p>
+
+        </div>
+
+
+        <div class="business-grid">
+
+            <div class="business-card">
+
+                <h3>Harga Terjangkau</h3>
+
+                <p>
+                    kami memliki harga yang standar 
+                    cocok untuk harga pelajar
+                </p>
+
+            </div>
+
+
+            <div class="business-card">
+
+                <h3>POS</h3>
+
+                <p>
+                    untuk saat ini kami hanya
+                    memiliki 1 cabang
+                </p>
+
+            </div>
+
+
+            <div class="business-card">
+
+                <h3>E-Commerce</h3>
+
+                <p>
+                    Kami menyediakan melalui 
+                    Tokopedia & Shoppe maupun E-Commerce lainnya 
+                </p>
+
+            </div>
+      
+        </div>
+
+    </section>
+
+
+    <!-- WHY US -->
+    <section>
+
+        <div class="section-title">
+
+            <h2>Mengapa Memilih Kami?</h2>
+
+            <p>
+                Beberapa nilai yang menjadi dasar pelayanan kami.
+            </p>
+
+        </div>
+
+
+        <div class="why-grid">
+
+            <div class="why-card">
+
+                <h3>Produk Berkualitas</h3>
+
+                <p>
+                    Mengutamakan kualitas produk dan
+                    kepuasan pelanggan.
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <h3>Harga Termurah</h3>
+
+                <p>
+                    Kamu memiliki harga yang paling murah
+                    tetapi Kulitas Bagus
+            
+                </p>
+
+            </div>
+
+
+            <div class="why-card">
+
+                <h3>Pelayanan Profesional</h3>
+
+                <p>
+                    Memberikan pelayanan yang cepat,
+                    transparan dan profesional.
+                </p>
+
+
+            </div>
+
+
+            <div class="why-card">
+
+                <h3>Pengiriman Cepat</h3>
+
+                <p>
+                    Proses distribusi dilakukan secara
+                    terencana dan efisien.
+                </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio">
+
+        <div class="section-title">
+
+            <h2>Portfolio</h2>
+
+            <p>
+                Beberapa kegiatan dan aktivitas bisnis perusahaan.
+            </p>
+
+        </div>
+
+
+        <div class="portfolio">
+
+            <div class="portfolio-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1555529771-35a38b6d6e3d?auto=format&fit=crop&w=900&q=80">
+
+                <div class="portfolio-text">
+
+                    <h3>Retail Partnership</h3>
+
+                    <p>Kerja sama dengan retail footwear.</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="portfolio-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80">
+
+                <div class="portfolio-text">
+
+                    <h3>E-Commerce Distribution</h3>
+
+                    <p>Distribusi melalui platform digital.</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="portfolio-item">
+
+                <img
+                    src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80">
+
+                <div class="portfolio-text">
+
+                    <h3>Sports Community</h3>
+
+                    <p>Kolaborasi bersama komunitas olahraga.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+
+            <h2>Hubungi Kami</h2>
+
+            <p>
+                Silakan hubungi kami untuk informasi
+                kerja sama dan produk.
+            </p>
+
+        </div>
+
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>crklss.id</h3>
+
+                <p>
+                    📍 Jakarta, Indonesia
+                </p>
+
+                <p>
+                    📞 +62 838 7281 1119
+                </p>
+
+                <p>
+                    ✉ info@crklss.id
+                </p>
+
+                <p>
+                    Senin - Jumat : 08.00 - 17.00
+                </p>
+
+            </div>
+
+
+            <form onsubmit="kirimPesan(event)">
+
+                <input
+                    type="text"
+                    placeholder="Nama"
+                    required>
+
+                <input
+                    type="email"
+                    placeholder="Email"
+                    required>
+
+                <input
+                    type="text"
+                    placeholder="Perusahaan">
+
+                <textarea
+                    placeholder="Pesan"
+                    required></textarea>
+
+                <button type="submit">
+                    Kirim Pesan
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>crklss.id</h3>
+
+                <p>
+                    hanya toko kecil yang ingin berkembang 
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Menu</h3>
+
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#products">Products</a>
+                <a href="#business">Business</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contact</h3>
+
+                <p>Jakarta, Indonesia</p>
+                <p>info@crklss.id</p>
+                <p>+62 838 7281 1119</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 crklss.id. All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        function kirimPesan(event) {
+
+            event.preventDefault();
+
+            alert("Pesan berhasil dikirim. Terima kasih telah menghubungi kami.");
+
+            event.target.reset();
+
+        }
+
+    </script>
+
+</body>
+</html>
